@@ -91,7 +91,13 @@ repositories {
                             <section id="getting-started-section" class="doc-section">
                                     <h2 class="section-title">Getting Started</h2>
                                     <div class="section-block">
-                                        <pre><code class="language-kotlin">HttpServer().start()</code></pre>
+                                        <pre><code class="language-kotlin">
+import daikon.HttpServer
+
+fun main() {
+  HttpServer().start()
+}
+                                        </code></pre>
                                         <p>Open your browser on <strong>http://localhost:4545/</strong> and enjoy!</p>
                                     </div>
                                 </section>
