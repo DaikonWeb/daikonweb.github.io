@@ -1,4 +1,4 @@
-/*   
+/*
  * Template Name: PrettyDocs - Bootstrap 4 Template for documentations
  * Version: 2.0
  * Author: Xiaoying Riley
@@ -437,7 +437,8 @@ select {
 .doc-header .doc-title {
   color: #40babd;
   margin-top: 0;
-  font-size: 36px;
+  font-size: 56px;
+  padding: 50px 0px;
 }
 
 .body-green .doc-header .doc-title {
@@ -1024,7 +1025,7 @@ select {
   top: 15px;
 }
 
-.affix, 
+.affix,
 .affix-bottom {
   width: 230px;
 }

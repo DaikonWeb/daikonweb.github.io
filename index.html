@@ -41,8 +41,13 @@
         </header><!--//header-->
         <div class="doc-wrapper">
             <div class="container">
-                <div id="doc-header" class="doc-header text-center">
-                    <h1 class="doc-title"><i class="icon fa fa-carrot"></i> Daikon documentation</h1>
+                <div id="doc-header" class="doc-header row">
+                    <div class="doc-content col-md-9 col-12 order-1">
+                        <h1 class="doc-title">Daikon documentation</h1>
+                    </div>
+                    <div class="doc-sidebar col-md-3 col-12 order-0 d-none d-md-flex">
+                      <img src="./assets/images/logo.svg" alt="Daikon logo"/>
+                    </div>
                 </div><!--//doc-header-->
                 <div class="doc-body row">
                     <div class="doc-content col-md-9 col-12 order-1">
@@ -94,7 +99,6 @@ repositories {
                     </div><!--//doc-content-->
                     <div class="doc-sidebar col-md-3 col-12 order-0 d-none d-md-flex">
                         <div id="doc-nav" class="doc-nav">
-
 	                            <nav id="doc-menu" class="nav doc-menu flex-column sticky">
                                     <a class="nav-link scrollto" href="#add-to-project-section">Add to Project</a>
                                     <nav class="doc-sub-menu nav flex-column">
