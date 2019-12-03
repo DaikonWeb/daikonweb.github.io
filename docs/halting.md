@@ -1,8 +1,7 @@
 ---
 layout: default
 title: Halting
-parent: Routing
-nav_order: 7
+nav_order: 4
 ---
 
 # Halting a request flow

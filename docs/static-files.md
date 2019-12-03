@@ -1,8 +1,7 @@
 ---
 layout: default
 title: Static files
-parent: Routing
-nav_order: 8
+nav_order: 5
 ---
 
 # Serve static files
