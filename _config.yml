@@ -1,1 +1,7 @@
-theme: jekyll-theme-cayman
+title: "Daikon Web"
+logo: "/docs/images/logo_with_text.svg"
+remote_theme: pmarsceill/just-the-docs
+aux_links:
+  "Daikon on GitHub":
+    - "//github.com/DaikonWeb/daikon"
+footer_content: "An Open Source Project"
