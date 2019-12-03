@@ -16,7 +16,7 @@ Matches exactly the specified path
 
 ```kotlin
 @Test
-fun routing() {
+fun `exact match`() {
     HttpServer()
         .get("/foo") { _, res -> res.write("Hello foo") }
         .start().use {
@@ -30,7 +30,7 @@ You can use `*` as wildcard
 
 ```kotlin
 @Test
-fun routing() {
+fun `approximate match`() {
     HttpServer()
         .get("/one/*") { _, res -> res.write("one") }
         .get("/two/*/foo") { _, res -> res.write("two") }
@@ -47,11 +47,31 @@ fun routing() {
 
 ```kotlin
 @Test
-fun routing() {
+fun `path parameters`() {
     HttpServer()
         .get("/foo/:name/baz") { req, res -> res.write("Hello ${req.param(":name")}") }
         .start().use {
             assertThat(get("/foo/bar/baz").text).isEqualTo("Hello bar")
+        }
+}
+```
+
+# Group of paths
+You can deduplicate common parts of the path wit the `path` sintax. `path` can also be nested.
+
+```kotlin
+@Test
+fun `nested paths`() {
+    HttpServer()
+        .path("/one") {
+            get("/two1") { _, res -> res.write("two1") }
+            path("/two2") {
+                get("/three") { _, res -> res.write("three") }
+            }
+        }
+        .start().use {
+            assertThat(get("/one/two1").text).isEqualTo("two1")
+            assertThat(get("/one/two2/three").text).isEqualTo("three")
         }
 }
 ```

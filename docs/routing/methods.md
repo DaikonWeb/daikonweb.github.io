@@ -8,11 +8,25 @@ nav_order: 3
 # Methods
 Currently supported methods:
 
+## ANY
+You can use `any` if you don't care about the request method
+
+```kotlin
+@Test
+fun get() {
+    HttpServer()
+        .any("/foo") { _, res -> res.write("Hello") }
+        .start().use {
+            assertThat(get("/foo").text).isEqualTo("Hello")
+            assertThat(post("/foo").text).isEqualTo("Hello")
+        }
+}
+```
 
 ## GET
 ```kotlin
 @Test
-fun get_request() {
+fun get() {
     HttpServer()
         .get("/foo") { _, res -> res.write("Hello") }
         .start().use {
@@ -24,7 +38,7 @@ fun get_request() {
 ## POST
 ```kotlin
 @Test
-fun get_request() {
+fun post() {
     HttpServer()
         .post("/foo") { _, res -> res.write("Hello") }
         .start().use {
@@ -36,7 +50,7 @@ fun get_request() {
 ## HEAD
 ```kotlin
 @Test
-fun get_request() {
+fun head() {
    HttpServer()
         .head("/foo") { _, res -> res.status(ACCEPTED_202) }
         .start().use {
