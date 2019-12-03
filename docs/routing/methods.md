@@ -5,32 +5,42 @@ parent: Routing
 nav_order: 3
 ---
 
-# Routing methods
+# Methods
+Currently supported methods:
 
-The main building block of a Daikon application is a set of routes. A route is made up of three pieces:
 
-* Method ```(get, post, head, any)```
-* Path ```(/foo, /foo/:bar, /foo/*)```
-* Action ```(request, response) -> { }```
-
-Routes matches the most specific one, if you declare exactly the same path and method twice, the second wins!
-
-You can specify a path in three ways:
-* exact ```/foo/bar```
-* approximate ```/foo/*```
-* with parameters ```/foo/:bar```
-
+## GET
 ```kotlin
 @Test
-fun routing() {
+fun get_request() {
     HttpServer()
-        .get("/foo") { _, res -> res.write("Hello foo") }
-        .get("/bar/*") { _, res -> res.write("Hello bar") }
-        .get("/baz/:name") { req, res -> res.write("Hello ${req.param(":name")}") }
+        .get("/foo") { _, res -> res.write("Hello") }
         .start().use {
-            assertThat(get("/foo").text).isEqualTo("Hello foo")
-            assertThat(get("/bar/too").text).isEqualTo("Hello bar")
-            assertThat(get("/baz/bob").text).isEqualTo("Hello bob")
+            assertThat(get("/foo").text).isEqualTo("Hello")
+        }
+}
+```
+
+## POST
+```kotlin
+@Test
+fun get_request() {
+    HttpServer()
+        .post("/foo") { _, res -> res.write("Hello") }
+        .start().use {
+            assertThat(post("/foo").text).isEqualTo("Hello")
+        }
+}
+```
+
+## HEAD
+```kotlin
+@Test
+fun get_request() {
+   HttpServer()
+        .head("/foo") { _, res -> res.status(ACCEPTED_202) }
+        .start().use {
+            assertThat(head("/foo").statusCode).isEqualTo(ACCEPTED_202)
         }
 }
 ```
