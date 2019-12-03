@@ -35,7 +35,7 @@ fun `after action`() {
 ```
 
 # Halting a request flow
-If you wont to suspend the execution of a request you can use `halt(response)`. You can specify it in a before hook, in a route action or in an after hook.
+If you want to suspend the execution of a request you can use `halt(response)`. You can specify it in a before hook, in a route action or in an after hook.
 
 ```kotlin
 @Test
