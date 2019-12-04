@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Static files
-nav_order: 6
+nav_order: 7
 ---
 
 # Serve static files
