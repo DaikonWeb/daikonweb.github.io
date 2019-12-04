@@ -7,8 +7,8 @@ parent: Request
 
 # Parameters
 
-## Query-String
-You can use `.param()` method from `request` object in a `GET` route-action to retrieve a query-string parameter.
+## Query-String parameters
+You can use `.param()` method from `request` object to retrieve a query-string parameter.
 
 ```kotlin
 @Test
@@ -22,7 +22,7 @@ fun `query string parameter`() {
 ```
 
 ## Body parameters
-You can use `.param()` method from `request` object in a `POST` route-action to retrieve an url-encoded parameter.
+You can use `.param()` method from `request` object in a `POST` route-action to retrieve an `application/x-www-form-urlencoded` parameter.
 
 ```kotlin
 @Test
@@ -32,6 +32,21 @@ fun `post data`() {
         .start()
         .use {
             assertThat(post("/", data = mapOf("name" to "Bob")).text).isEqualTo("hello Bob")
+        }
+}
+```
+
+## Path parameters
+You can use `.param()` method from `request` object to retrieve a path parameter, you must use the same name you gave in the path including the colon.
+
+```kotlin
+@Test
+fun `path parameter`() {
+    HttpServer()
+        .get("/user/:name") { req, res -> res.write("hello ${req.param(":name")}") }
+        .start()
+        .use {
+            assertThat(get("/user/Bob").text).isEqualTo("hello Bob")
         }
 }
 ```
