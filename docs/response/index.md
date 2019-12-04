@@ -37,13 +37,13 @@ fun `set an HTTP status code`() {
 ```
 
 ## Content Type
-Use `.content(type: String)` method to set the content-type header for the response.
+Use `.type(contentType: String)` method to set the content-type header for the response.
 
 ```
 @Test
 fun `set a Content-Type`() {
     HttpServer()
-        .get("/") { _, res -> res.content("application/json") }
+        .get("/") { _, res -> res.type("application/json") }
         .start().use {
             assertThat(get("/").headers["Content-Type"]).isEqualTo("application/json")
         }
