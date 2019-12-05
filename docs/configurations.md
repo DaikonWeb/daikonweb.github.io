@@ -9,7 +9,7 @@ nav_order: 9
 ## Custom port
 By default the server starts on port `4545` but you can specify a different one.
 
-```
+```kotlin
 @Test
 fun `start on port 8080`() {
     HttpServer(8080)
