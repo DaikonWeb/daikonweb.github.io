@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Halting
-nav_order: 6
+nav_order: 60
 ---
 
 # Halting a request flow
