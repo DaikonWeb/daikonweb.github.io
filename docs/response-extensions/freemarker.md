@@ -6,6 +6,8 @@ nav_order: 1
 ---
 
 # Daikon Freemarker
+
+## Methods
 Daikon Freemarker adds two methods to the Response:
 * `render(name, model, folder)`: to render a Freemarker template
   * `name` is the file template name to render without `.ftl` extension
@@ -14,7 +16,7 @@ Daikon Freemarker adds two methods to the Response:
 
 * `html(name, model, folder)`: is like `render` but also set the content type to `text/html;charset=utf-8`
 
-# How to use
+## How to use
 ```
 HttpServer()
     .get("/") { _, res -> res.html("hello_to", hashMapOf("name" to "Bob")) }
@@ -32,5 +34,5 @@ Template `hello_to.ftl` content:
 hello ${name}
 ```
 
-# Repository
+## Repository
 https://github.com/DaikonWeb/daikon-freemarker
