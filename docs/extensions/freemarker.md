@@ -1,14 +1,14 @@
 ---
 layout: default
 title: Daikon Freemarker
-parent: Response Extensions
+parent: Extensions
 nav_order: 1
 ---
 
 # Daikon Freemarker
 
 ## Methods
-Daikon Freemarker adds two methods to the Response:
+Daikon Freemarker adds two methods to the **Response**:
 * `render(name, model, folder)`: to render a Freemarker template
   * `name` is the file template name to render without `.ftl` extension
   * `model` is a map to inject objects inside the template. The default is an empty map
@@ -35,4 +35,4 @@ hello ${name}
 ```
 
 ## Repository
-https://github.com/DaikonWeb/daikon-freemarker
+[https://github.com/DaikonWeb/daikon-freemarker](https://github.com/DaikonWeb/daikon-freemarker)
