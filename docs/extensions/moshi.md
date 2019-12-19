@@ -1,14 +1,14 @@
 ---
 layout: default
-title: Daikon Gson
+title: Daikon Moshi
 parent: Extensions
 nav_order: 2
 ---
 
-# Daikon Gson
+# Daikon Moshi
 
 ## Methods
-Daikon Gson adds one method to the **Response** and one to the **Request** in order to integrate easily the json functionality.
+Daikon Moshi adds one method to the **Response** and one to the **Request** in order to integrate easily the json functionality.
 
 ### Response
 `.json(myInstance)`: to render a class instance as a Json string
@@ -34,4 +34,4 @@ HttpServer()
 ```
 
 ## Repository
-[https://github.com/DaikonWeb/daikon-gson](https://github.com/DaikonWeb/daikon-gson)
+[https://github.com/DaikonWeb/daikon-moshi](https://github.com/DaikonWeb/daikon-moshi)
