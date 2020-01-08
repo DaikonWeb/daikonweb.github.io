@@ -7,7 +7,7 @@ parent: Request
 
 # Headers
 
-You can use `.header()` method from `request` object to retrieve an http header.
+You can use `.header()` method from `request` object to retrieve a http header.
 
 ```kotlin
 @Test

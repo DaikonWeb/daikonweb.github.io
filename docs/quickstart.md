@@ -10,7 +10,7 @@ nav_order: 10
 
 ### Gradle
 
-Add JitPack in your root build.gradle at the end of repositories:
+Add JitPack to your root build.gradle at the end of repositories:
 
 ```groovy
 repositories {

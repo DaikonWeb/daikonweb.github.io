@@ -7,7 +7,7 @@ nav_order: 4
 
 # Path patterns
 
-Routes matches the most specific path, if you declare exactly the same path and method twice, the second wins!
+Routes matches the most specific path: if you declare exactly the same path and method twice, the second wins!
 
 You can specify a path in three ways:
 
@@ -57,7 +57,7 @@ fun `path parameters`() {
 ```
 
 # Group of paths
-You can deduplicate common parts of the path wit the `path` sintax. `path` can also be nested.
+You can deduplicate common parts of the path with the `path` syntax. `path` can also be nested.
 
 ```kotlin
 @Test

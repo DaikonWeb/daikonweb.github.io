@@ -8,7 +8,7 @@ parent: Testing
 # How to test write an end to end test
 
 You can start the server in the test, call routes and make assertions, then you can stop the server.
-Methods `get`, is provided by [OkHttp](https://square.github.io/okhttp/).
+Method `get` is provided by [OkHttp](https://square.github.io/okhttp/).
 
 ```kotlin
 @Test

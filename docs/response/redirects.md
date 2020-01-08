@@ -8,7 +8,7 @@ parent: Response
 # Redirects
 
 You can use `redirect` to redirect the browser to a relative or absolute path. 
-The defaul redirection is temporarily (status code 302) but you can use a specific Http 3xx status code.
+The defaul redirection is temporary (status code 302) but you can also use a specific HTTP 3xx status code.
 
 ```kotlin
 @Test

@@ -7,7 +7,7 @@ parent: Request
 
 # Attributes
 
-You can use `.attribute(key, value)` method from `request` to set an object in the request and retrieve it with `.attribute(key)`.
+You can use `.attribute(key, value)` method from `request` to set an object on the request and then retrieve it with `.attribute(key)`.
 A common use of attributes is to propagate objects between hooks and route action.
 
 ```kotlin

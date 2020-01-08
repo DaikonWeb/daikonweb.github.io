@@ -10,11 +10,11 @@ nav_order: 1
 ## Methods
 Daikon Freemarker adds two methods to the **Response**:
 * `render(name, model, folder)`: to render a Freemarker template
-  * `name` is the file template name to render without `.ftl` extension
+  * `name` is the name of the template file to render, excluding the extension `.ftl`
   * `model` is a map to inject objects inside the template. The default is an empty map
   * `folder` is the directory of your templates. The default is `src/main/resources/templates`
 
-* `html(name, model, folder)`: is like `render` but also set the content type to `text/html;charset=utf-8`
+* `html(name, model, folder)`: same as `render`, but it also sets the content type to `text/html;charset=utf-8`
 
 ## How to use
 ```
@@ -29,7 +29,7 @@ HttpServer()
 
 Put your template file `hello_to.ftl` under the default directory `src/main/resources/templates`.
 
-Template `hello_to.ftl` content:
+Content of the `hello_to.ftl` template:
 ```
 hello ${name}
 ```
