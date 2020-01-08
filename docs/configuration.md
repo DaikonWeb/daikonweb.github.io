@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Configurations
+title: Configuration
 nav_order: 90
 ---
 
-# Configurations
+# Configuration
 
 ## Custom port
 By default the server starts on port `4545` but you can specify a different one.

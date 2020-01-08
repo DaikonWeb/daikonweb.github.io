@@ -51,7 +51,7 @@ fun `set a Content-Type`() {
 ```
 
 ## Headers
-Use `.header(name: String, value: String)` method to set an header for the response.
+Use `.header(name: String, value: String)` method to set a header for the response.
 
 ```
 @Test

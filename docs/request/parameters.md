@@ -37,7 +37,7 @@ fun `post data`() {
 ```
 
 ## Path parameters
-You can use `.param()` method from `request` object to retrieve a path parameter, you must use the same name you gave in the path including the colon.
+You can use `.param()` method from `request` object to retrieve a path parameter. You must use the same name you gave in the path including the colon.
 
 ```kotlin
 @Test

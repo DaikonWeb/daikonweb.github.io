@@ -8,13 +8,13 @@ nav_order: 2
 # Daikon Moshi
 
 ## Methods
-Daikon Moshi adds one method to the **Response** and one to the **Request** in order to integrate easily the json functionality.
+Daikon Moshi adds one method to the **Response** and one to the **Request** in order to integrate easily the JSON functionality.
 
 ### Response
-`.json(myInstance)`: to render a class instance as a Json string
+`.json(myInstance)`: to serialize a class instance to a JSON string
 
 ### Request
-`.json<MyClass>()`: to transform a json string to the desired class instance
+`.json<MyClass>()`: to deserialize a JSON string to the desired class instance
 
 ## How to use
 1. Define a data class
@@ -22,7 +22,7 @@ Daikon Moshi adds one method to the **Response** and one to the **Request** in o
 data class Greeting(val say: String, val language: String)
 ```
 
-2. Create a server and use the data class to read and produce Json
+2. Create a server and use the data class to read and produce JSON
 ```
 HttpServer()
     .post("/hello") { req, res -> res.json(req.json<Greeting>()) }

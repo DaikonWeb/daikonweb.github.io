@@ -8,7 +8,7 @@ nav_order: 70
 You can serve static files with some limitations:
 * you can't serve on the root path
 * all static files must be under `/src/main/resources/assets` folder
-* path and folder must have same structure
+* path and folder must have the same structure
 
 For example, you can serve the file `/src/main/resources/assets/foo/style.css` with the url `http://localhost:4545/foo/style.css`.
 

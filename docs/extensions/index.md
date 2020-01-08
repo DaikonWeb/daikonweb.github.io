@@ -6,4 +6,4 @@ has_children: true
 ---
 
 # Extensions
-This is a collection of extension methods in order to simplity the integration with reading-writing mechanisms such as JSON, HTML, and so on.
+This is a collection of extension methods in order to simplify the integration with reading-writing mechanisms such as JSON, HTML, and so on.

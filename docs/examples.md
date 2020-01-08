@@ -5,4 +5,4 @@ nav_order: 110
 ---
 
 # Examples
-You can find some exemples here https://github.com/DaikonWeb/daikon-examples
+You can find some examples here https://github.com/DaikonWeb/daikon-examples

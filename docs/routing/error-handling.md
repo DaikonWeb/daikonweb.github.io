@@ -6,7 +6,7 @@ nav_order: 7
 ---
 
 # Error handling
-When a route action throw an exception the server returns an internal server error (status code 500)
+When a route action throws an exception, the server returns an internal server error (status code 500)
 
 ```kotlin
 @Test
