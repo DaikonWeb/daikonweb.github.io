@@ -22,7 +22,7 @@ repositories {
 Add the dependency
 
 ```groovy
-implementation 'com.github.DaikonWeb:daikon:0.6.1'
+implementation 'com.github.DaikonWeb:daikon:0.6.5'
 ```
 
 ### Maven
@@ -43,7 +43,7 @@ Add the dependency
 <dependency>
     <groupId>com.github.DaikonWeb</groupId>
     <artifactId>daikon</artifactId>
-    <version>0.6.1</version>
+    <version>0.6.5</version>
 </dependency>
 ```
 
