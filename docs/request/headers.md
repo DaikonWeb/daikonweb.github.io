@@ -20,3 +20,22 @@ fun headers() {
         }
 }
 ```
+
+You can check if an header is present before accessing it.
+You can use `.hasHeader("name")` request method.
+
+```kotlin
+@Test
+fun `check if an header is present`() {
+    HttpServer()
+        .post("/") { req, res ->
+            val name = if (req.hasHeader("name")) req.header("name") else "World"
+            res.write("Hello $name")
+        }
+        .start()
+        .use {
+            assertThat(post("/").text).isEqualTo("Hello World")
+            assertThat(post("/", mapOf("name" to "Bob")).text).isEqualTo("Hello Bob")
+        }
+}
+```
