@@ -18,6 +18,7 @@ Daikon Gson adds one method to the **Response** and one to the **Request** in or
 
 ## How to use
 1. Define data classes with appropriate XML annotations
+
 ```
 @JacksonXmlRootElement(localName = "blackjackHand")
 data class BlackjackHand(
@@ -33,6 +34,7 @@ enum class Suit {
 ```
 
 2. Create a server and use the data class to read and produce XML
+
 ```
 HttpServer()
     .post("/") { req, res -> res.xml(req.xml<BlackjackHand>()) }
