@@ -2,7 +2,7 @@
 layout: default
 title: Daikon Lambda
 parent: Extensions
-nav_order: 5
+nav_order: 6
 ---
 
 # Daikon Lambda
