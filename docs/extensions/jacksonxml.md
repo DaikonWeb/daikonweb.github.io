@@ -47,5 +47,5 @@ HttpServer()
     }
 ```
 
-## Repository
+## For more informations go to the Project README
 [https://github.com/DaikonWeb/daikon-jackson-xml](https://github.com/DaikonWeb/daikon-jackson-xml)

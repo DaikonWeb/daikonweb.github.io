@@ -27,5 +27,5 @@ HttpServer()
     .start()
 ```
 
-## Repository
+## For more informations go to the Project README
 [https://github.com/DaikonWeb/daikon-eureka](https://github.com/DaikonWeb/daikon-eureka)

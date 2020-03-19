@@ -86,5 +86,5 @@ fun `custom serializer`() {
 }
 ```
 
-## Repository
+## For more informations go to the Project README
 [https://github.com/DaikonWeb/daikon-gson](https://github.com/DaikonWeb/daikon-gson)

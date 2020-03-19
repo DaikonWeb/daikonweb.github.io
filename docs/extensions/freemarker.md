@@ -34,5 +34,5 @@ Content of the `hello_to.ftl` template:
 hello ${name}
 ```
 
-## Repository
+## For more informations go to the Project README
 [https://github.com/DaikonWeb/daikon-freemarker](https://github.com/DaikonWeb/daikon-freemarker)
