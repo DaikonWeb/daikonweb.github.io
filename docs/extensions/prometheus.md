@@ -8,6 +8,9 @@ nav_order: 5
 # Daikon Prometheus
 Daikon Prometheus is a library that add to Daikon the ability to expose metrics for Prometheus.
 
+## Project
+[https://github.com/DaikonWeb/daikon-prometheus](https://github.com/DaikonWeb/daikon-prometheus)
+
 ## How to use
 
 ### To publish metrics:
@@ -32,6 +35,3 @@ HttpServer()
         assertThat(get("http://localhost:4545/foo").text).contains("calls_total 2.0")
     }
 ```
-
-## For more informations go to the Project README
-[https://github.com/DaikonWeb/daikon-prometheus](https://github.com/DaikonWeb/daikon-prometheus)

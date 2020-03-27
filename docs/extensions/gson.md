@@ -7,6 +7,9 @@ nav_order: 2
 
 # Daikon Gson
 
+## Project
+[https://github.com/DaikonWeb/daikon-gson](https://github.com/DaikonWeb/daikon-gson)
+
 ## Methods
 Daikon Gson adds one method to the **Response** and one to the **Request** in order to integrate easily the JSON functionality.
 
@@ -85,6 +88,3 @@ fun `custom serializer`() {
         }
 }
 ```
-
-## For more informations go to the Project README
-[https://github.com/DaikonWeb/daikon-gson](https://github.com/DaikonWeb/daikon-gson)

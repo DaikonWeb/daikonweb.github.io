@@ -7,6 +7,9 @@ nav_order: 3
 
 # Daikon Jackson XML
 
+## Project
+[https://github.com/DaikonWeb/daikon-jackson-xml](https://github.com/DaikonWeb/daikon-jackson-xml)
+
 ## Methods
 Daikon Gson adds one method to the **Response** and one to the **Request** in order to integrate easily the XML parsing with jackson library.
 
@@ -46,6 +49,3 @@ HttpServer()
         assertThat(response.text).isEqualTo("""<blackjackHand><hiddenCard><rank>4</rank><suit>CLUBS</suit></hiddenCard><visibleCards><card><rank>1</rank><suit>DIAMONDS</suit></card><card><rank>7</rank><suit>HEARTS</suit></card></visibleCards></blackjackHand>""")
     }
 ```
-
-## For more informations go to the Project README
-[https://github.com/DaikonWeb/daikon-jackson-xml](https://github.com/DaikonWeb/daikon-jackson-xml)

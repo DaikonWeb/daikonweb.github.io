@@ -7,6 +7,9 @@ nav_order: 1
 
 # Daikon Freemarker
 
+## Project
+[https://github.com/DaikonWeb/daikon-freemarker](https://github.com/DaikonWeb/daikon-freemarker)
+
 ## Methods
 Daikon Freemarker adds two methods to the **Response**:
 * `render(name, model, folder)`: to render a Freemarker template
@@ -33,6 +36,3 @@ Content of the `hello_to.ftl` template:
 ```
 hello ${name}
 ```
-
-## For more informations go to the Project README
-[https://github.com/DaikonWeb/daikon-freemarker](https://github.com/DaikonWeb/daikon-freemarker)
