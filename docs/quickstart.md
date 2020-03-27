@@ -22,7 +22,7 @@ repositories {
 Add the dependency
 
 ```groovy
-implementation 'com.github.DaikonWeb:daikon:1.1.9'
+implementation 'com.github.DaikonWeb:daikon:1.2.4'
 ```
 
 ### Maven
