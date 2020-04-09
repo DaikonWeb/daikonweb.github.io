@@ -43,7 +43,7 @@ Add the dependency
 <dependency>
     <groupId>com.github.DaikonWeb</groupId>
     <artifactId>daikon</artifactId>
-    <version>1.2.7</version>
+    <version>1.3.0</version>
 </dependency>
 ```
 
