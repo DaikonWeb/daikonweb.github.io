@@ -27,13 +27,16 @@ data class Greeting(val say: String, val language: String)
 
 2. Create a server and use the data class to read and produce JSON
 ```
-HttpServer()
-    .post("/hello") { req, res -> res.json(req.json<Greeting>()) }
-    .start().use {
-        val response = post(url = "http://localhost:4545/hello", json = mapOf("say" to "Ciao", "language" to "ITA"))
-        assertThat(response.text).isEqualTo("""{"say":"ciao","language":"ITA"}""")
-        assertThat(response.headers["Content-Type"]).isEqualTo(APPLICATION_JSON_UTF_8.asString())
-    }
+@Test
+fun test() {
+    HttpServer()
+        .post("/hello") { req, res -> res.json(req.json<Greeting>()) }
+        .start().use {
+            val response = "http://localhost:4545/hello".http.post(body = """{"say":"ciao","language":"ITA"}""")
+            assertThat(response.body).isEqualTo("""{"say":"ciao","language":"ITA"}""")
+            assertThat(response.header("Content-Type")).isEqualTo("application/json;charset=utf-8")
+        }
+}
 ```
 
 ## How to deserialize Complex Types
@@ -58,8 +61,8 @@ fun `custom deserializer`() {
             res.write("""I will remind you to "${app.message}" at ${app.date.format(ofPattern("yyyy-MM-dd"))}""")
         }
         .start().use {
-            val response = post(url = "http://localhost:4545/remindme", data = """{"message":"Eat a Daikon","date":"2020-01-31"}""")
-            assertThat(response.text).isEqualTo("""I will remind you to "Eat a Daikon" at 2020-01-31""")
+            val response = "http://localhost:4545/remindme".http.post(body = """{"message":"Eat a Daikon","date":"2020-01-31"}""")
+            assertThat(response.body).isEqualTo("""I will remind you to "Eat a Daikon" at 2020-01-31""")
         }
 }
 ```
@@ -83,8 +86,8 @@ fun `custom serializer`() {
             response.json(app, dateSerializer)
         }
         .start().use {
-            val response = get(url = "http://localhost:4545/nextAppointment")
-            assertThat(response.text).isEqualTo("""{"message":"Eat a Daikon","date":"31/01/2020"}""")
+            val response = "http://localhost:4545/nextAppointment".http.get()
+            assertThat(response.body).isEqualTo("""{"message":"Eat a Daikon","date":"31/01/2020"}""")
         }
 }
 ```

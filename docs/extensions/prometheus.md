@@ -15,23 +15,29 @@ Daikon Prometheus is a library that add to Daikon the ability to expose metrics 
 
 ### To publish metrics:
 ```
-HttpServer()
-    .prometheus("/prometheus")
-    .start().use {
-        assertThat(get("http://localhost:4545/prometheus").text).contains("jvm")
-    }
+@Test
+fun `can publish metrics`() {
+    HttpServer(5555)
+        .prometheus("/foo")
+        .start().use {
+            assertThat("http://localhost:5555/foo".http.get().body).contains("jvm")
+        }
+}
 ```
 
 ### To use a custom metric:
 ```
-HttpServer()
-    .prometheus("/prometheus")
-    .get("/counter") { _, _, ctx ->
-        ctx.meterRegistry().counter("calls").increment()
-    }
-    .start().use {
-        get("http://localhost:4545/counter")
-        get("http://localhost:4545/counter")
-        assertThat(get("http://localhost:4545/foo").text).contains("calls_total 2.0")
-    }
+@Test
+fun `custom metrics`() {
+    HttpServer(5555)
+        .prometheus("/foo")
+        .get("/bar") { _, _, ctx ->
+            ctx.meterRegistry().counter("calls").increment()
+        }
+        .start().use {
+            "http://localhost:5555/bar".http.get()
+            "http://localhost:5555/bar".http.get()
+            assertThat("http://localhost:5555/foo".http.get().body).contains("calls_total 2.0")
+        }
+}
 ```

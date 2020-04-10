@@ -39,13 +39,15 @@ enum class Suit {
 2. Create a server and use the data class to read and produce XML
 
 ```
-HttpServer()
-    .post("/") { req, res -> res.xml(req.xml<BlackjackHand>()) }
-    .start().use {
-        val response = post(
-            url = "http://localhost:4545/",
-            data = """<blackjackHand><hiddenCard><rank>4</rank><suit>CLUBS</suit></hiddenCard><visibleCards><card><rank>1</rank><suit>DIAMONDS</suit></card><card><rank>7</rank><suit>HEARTS</suit></card></visibleCards></blackjackHand>"""
-        )
-        assertThat(response.text).isEqualTo("""<blackjackHand><hiddenCard><rank>4</rank><suit>CLUBS</suit></hiddenCard><visibleCards><card><rank>1</rank><suit>DIAMONDS</suit></card><card><rank>7</rank><suit>HEARTS</suit></card></visibleCards></blackjackHand>""")
-    }
+@Test
+fun `xml request and response`() {
+    HttpServer()
+        .post("/") { req, res -> res.xml(req.xml<BlackjackHand>()) }
+        .start().use {
+            val response = "http://localhost:4545/".http.post(
+                body = """<blackjackHand><hiddenCard><rank>4</rank><suit>CLUBS</suit></hiddenCard><visibleCards><card><rank>1</rank><suit>DIAMONDS</suit></card><card><rank>7</rank><suit>HEARTS</suit></card></visibleCards></blackjackHand>"""
+            )
+            assertThat(response.body).isEqualTo("""<blackjackHand><hiddenCard><rank>4</rank><suit>CLUBS</suit></hiddenCard><visibleCards><card><rank>1</rank><suit>DIAMONDS</suit></card><card><rank>7</rank><suit>HEARTS</suit></card></visibleCards></blackjackHand>""")
+        }
+}
 ```

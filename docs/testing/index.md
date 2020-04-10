@@ -10,6 +10,6 @@ Daikon was designed to be easily testable. It is perfectly suited for an outside
 The tests in this section use the following libraries:
 * [AssertJ](https://assertj.github.io/doc/) as assertion library
 * [mockito-kotlin](https://github.com/nhaarman/mockito-kotlin) as mocking library
-* [OkHttp](https://square.github.io/okhttp/) as http client
+* [Topinambur](https://github.com/DaikonWeb/topinambur) as http client
 
 If you want to see how we test Daikon you can clone the [Daikon repository](https://github.com/DaikonWeb/daikon) and take a look around.

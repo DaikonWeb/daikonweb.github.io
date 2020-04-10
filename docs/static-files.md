@@ -13,12 +13,14 @@ You can serve static files with some limitations:
 For example, you can serve the file `/src/main/resources/assets/foo/style.css` with the url `http://localhost:4545/foo/style.css`.
 
 ```kotlin
+import topinambur.http
+
 @Test
 fun `serve static files`() {
     HttpServer()
         .assets("/foo/*")
         .start().use {
-            assertThat(get("/foo/style.css").statusCode).isEqualTo(OK_200)
+            assertThat("http://localhost:4545/foo/style.css".http.get().statusCode).isEqualTo(OK_200)
         }
 }
 ```

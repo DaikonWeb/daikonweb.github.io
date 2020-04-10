@@ -10,12 +10,14 @@ nav_order: 90
 By default the server starts on port `4545` but you can specify a different one.
 
 ```kotlin
+import topinambur.http
+
 @Test
 fun `start on port 8080`() {
     HttpServer(8080)
         .get("/") { _, res -> res.write("Hello") }
         .start().use {
-            assertThat(get("http://localhost:8080/").text).isEqualTo("Hello")
+            assertThat("http://localhost:8080/".http.get().body).isEqualTo("Hello")
         }
 }
 ```

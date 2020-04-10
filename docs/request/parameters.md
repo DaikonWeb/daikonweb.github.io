@@ -11,12 +11,14 @@ parent: Request
 You can use `.param()` method from `request` object to retrieve a query-string parameter.
 
 ```kotlin
+import topinambur.http
+
 @Test
 fun `query string parameter`() {
     HttpServer()
         .get("/") { req, res -> res.write("hello ${req.param("name")}") }
         .start().use {
-            assertThat(get("/?name=Bob").text).isEqualTo("hello Bob")
+            assertThat("http://localhost:4545/".http.get(params = mapOf("name" to "Bob")).body).isEqualTo("hello Bob")
         }
 }
 ```
@@ -25,13 +27,15 @@ fun `query string parameter`() {
 You can use `.param()` method from `request` object in a `POST` route-action to retrieve an `application/x-www-form-urlencoded` parameter.
 
 ```kotlin
+import topinambur.http
+
 @Test
 fun `post data`() {
     HttpServer()
         .post("/") { req, res -> res.write("hello ${req.param("name")}") }
         .start()
         .use {
-            assertThat(post("/", data = mapOf("name" to "Bob")).text).isEqualTo("hello Bob")
+            assertThat("http://localhost:4545/".http.post(data = mapOf("name" to "Bob")).body).isEqualTo("hello Bob")
         }
 }
 ```
@@ -40,13 +44,15 @@ fun `post data`() {
 You can use `.param()` method from `request` object to retrieve a path parameter. You must use the same name you gave in the path including the colon.
 
 ```kotlin
+import topinambur.http
+
 @Test
 fun `path parameter`() {
     HttpServer()
         .get("/user/:name") { req, res -> res.write("hello ${req.param(":name")}") }
         .start()
         .use {
-            assertThat(get("/user/Bob").text).isEqualTo("hello Bob")
+            assertThat("http://localhost:4545/user/Bob".http.get().body).isEqualTo("hello Bob")
         }
 }
 ```
@@ -55,12 +61,14 @@ fun `path parameter`() {
 You can use `.body()` method from `request` object to retrieve the raw body.
 
 ```kotlin
+import topinambur.http
+
 @Test
 fun body() {
     HttpServer()
         .any("/") { req, res -> res.write("Hello ${req.body()}") }
         .start().use {
-            assertThat(post("/", data = "Bob").text).isEqualTo("Hello Bob")
+            assertThat("http://localhost:4545/".http.post(body = "Bob").body).isEqualTo("Hello Bob")
         }
 }
 ```

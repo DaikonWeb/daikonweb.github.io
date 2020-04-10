@@ -15,8 +15,8 @@ Daikon Lambda is a sibling library to Daikon it simpifies the build of a Kotlin-
 
 ### Extends the HttpHandler in your Serverless project
 ```
-class MyHandler : HttpHandler() {
-    override fun routing() {
+class VegetablesHandler : HttpHandler() {
+    override fun LambdaCall.routing() {
         get("/") { req, res -> res.write("Hello, I'm a daikon-lambda!") }
     }
 }

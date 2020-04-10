@@ -8,15 +8,17 @@ parent: Testing
 # How to test write an end to end test
 
 You can start the server in the test, call routes and make assertions, then you can stop the server.
-Method `get` is provided by [OkHttp](https://square.github.io/okhttp/).
+Extension method `http` is provided by [Topinambur](https://github.com/DaikonWeb/topinambur).
 
 ```kotlin
+import topinambur.http
+
 @Test
 fun `say hello`() {
     HttpServer()
         .get("/*") { _, res -> res.write("Hello") }
         .start().use {
-            assertThat(get("http://localhost:4545/").text).isEqualTo("Hello")
+            assertThat("http://localhost:4545/".http.get().body).isEqualTo("Hello")
         }
 }
 ```

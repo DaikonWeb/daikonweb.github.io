@@ -2,7 +2,7 @@
 
 ![Daikon](./docs/images/logo.svg)
 
-Daikon is a simple and minimal framework for creating web applications in Kotlin with minimal effort.
+Daikon is a dead simple and minimal framework for creating web applications in Kotlin with minimal effort.
 The main goals are:
 * Use a framework easy to test
 * Build a simple web application in less than 5 minutes
