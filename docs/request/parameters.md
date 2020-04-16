@@ -7,6 +7,29 @@ parent: Request
 
 # Parameters
 
+## Check if a parameter is present
+
+You can check if a parameter is present before accessing it.
+You can use `.hasParam("name")` request method.
+
+Has parameter works for all types of parameters (query-string, body, path)
+
+```kotlin
+import topinambur.http
+
+@Test
+fun `check if a parameter is present`() {
+    HttpServer()
+        .post("/") { req, res ->
+            assertThat(req.hasParam("name")).isTrue()
+            assertThat(req.hasParam("age")).isFalse()
+        }
+        .start().use {
+            "http://localhost:4545/?name=Bob".http.get()
+        }
+}
+```
+
 ## Query-String parameters
 You can use `.param()` method from `request` object to retrieve a query-string parameter.
 

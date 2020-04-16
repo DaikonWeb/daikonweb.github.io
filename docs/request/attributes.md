@@ -23,3 +23,23 @@ fun attribute() {
         }
 }
 ```
+
+You can check if an attribute is present before accessing it.
+You can use `.hasAttribute("name")` request method.
+
+```kotlin
+import topinambur.http
+
+@Test
+fun `check if an attribute is present``() {
+    HttpServer()
+        .before("/") { req, _ -> req.attribute("foo_key", "foo_value") }
+        .get("/") { req, res ->
+            assertThat(req.hasAttribute("foo_key")).isTrue()
+            assertThat(req.hasAttribute("bar_key")).isFalse()
+        }
+        .start().use {
+            "http://localhost:4545/".http.get().body
+        }
+}
+```

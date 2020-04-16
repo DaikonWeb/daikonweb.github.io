@@ -33,13 +33,11 @@ import topinambur.http
 fun `check if an header is present`() {
     HttpServer()
         .post("/") { req, res ->
-            val name = if (req.hasHeader("name")) req.header("name") else "World"
-            res.write("Hello $name")
+            assertThat(req.hasHeader("name")).isTrue()
+            assertThat(req.hasHeader("age")).isFalse()
         }
-        .start()
-        .use {
-            assertThat("http://localhost:4545/".http.post().body).isEqualTo("Hello World")
-            assertThat("http://localhost:4545/".http.post(headers = mapOf("name" to "Bob")).body).isEqualTo("Hello Bob")
+        .start().use {
+            "http://localhost:4545/".http.post(headers = mapOf("name" to "Bob"))
         }
 }
 ```
