@@ -71,3 +71,28 @@ fun `set a header`() {
         }
 }
 ```
+
+## Log the response
+You can access to the response body, status and type, so you can log the response in this way:
+
+```kotlin
+import topinambur.http
+
+@Test
+fun `log the response`() {
+    HttpServer()
+        .any("/") { _, res ->
+            res.type("application/json")
+            res.write("Hello")
+        }
+        .after("/") { _, res ->
+            println("statusCode: ${res.status()}")
+            println("contentType: ${res.type()}")
+            println("body: ${res.body()}")
+        }
+        .start().use {
+            assertThat("http://localhost:4545/".http.get().body).isEqualTo("Hello")
+        }
+}
+```
+
