@@ -72,7 +72,7 @@ fun `set a header`() {
 }
 ```
 
-## Log the response
+## Log the response
 You can access to the response body, status and type, so you can log the response in this way:
 
 ```kotlin
