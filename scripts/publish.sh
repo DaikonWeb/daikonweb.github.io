@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 PROJECT_DIR=$(cd $(dirname $0)/..; pwd -P)
-PROJECT_NAME=$(basename $PROJECT_DIR)
+PROJECT_NAME="daikon"
 TAG=$1
 
 cd ${PROJECT_DIR}
